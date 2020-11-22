@@ -16,14 +16,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center'
     },
-    
     avatar: {
         width: 30,
         height: 30,
         borderRadius: 15,
         marginHorizontal: 10
     },
-
     nickname: {
         color: '#444',
         marginVertical: 10,

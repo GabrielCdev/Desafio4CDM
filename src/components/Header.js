@@ -29,18 +29,15 @@ const styles = StyleSheet.create({
         borderColor: '#BBB',
         width: '100%'
     },
-
     rowContainer: {
         flexDirection: 'row',
         alignItems: 'center'
     },
-
     image: {
         height: 30,
         width: 30,
         resizeMode: 'contain'
     },
-
     title: {
         color: '#000',
         fontFamily: 'shelter',

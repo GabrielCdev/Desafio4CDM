@@ -63,13 +63,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 10
     },
-
     caption: {
         marginLeft: 10,
         fontSize: 12,
         color: '#CCC'
     },
-
     input: {
         width: '90%'
     }
