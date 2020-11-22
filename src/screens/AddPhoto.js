@@ -15,6 +15,8 @@ import {
 } from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
 
+const noUser = 'É preciso estar logado!'
+
 class AddPhoto extends Component {
     state = {
         image: null,
@@ -22,6 +24,12 @@ class AddPhoto extends Component {
     }
 
     pickImage = () => {
+        if(!this.props.name) {
+            Alert.alert(noUser)
+
+            return
+        }
+
         ImagePicker.launchImageLibraryAsync({
             title: 'Escolha a imagem',
             maxHeight: 600,
@@ -34,6 +42,12 @@ class AddPhoto extends Component {
     }
 
     save = async () => {
+        if(!this.props.name) {
+            Alert.alert('Falha!', noUser)
+
+            return
+        }
+
         this.props.onAddPost({
             id: Math.random(),
             nickname: this.props.name,
@@ -61,7 +75,7 @@ class AddPhoto extends Component {
                         <Text style={styles.buttomText}>Escolha a foto</Text>
                     </TouchableOpacity>
                     <TextInput placeholder='Comentário para foto...' style={styles.input} value={this.state.comment}
-                        onChangeText={comment => this.setState({ comment })} />
+                        editable={this.props.name != null} onChangeText={comment => this.setState({ comment })} />
                     <TouchableOpacity onPress={this.save} style={styles.buttom}>
                         <Text style={styles.buttomText}>Salvar</Text>
                     </TouchableOpacity>
