@@ -4,9 +4,9 @@
     "slug": "desafio4CDM",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/imgs/icon.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/imgs/icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
