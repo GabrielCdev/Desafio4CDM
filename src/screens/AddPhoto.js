@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     image: {
-        width: Dimensions.get('window').width,
+        width: '100%',
         height: Dimensions.get('window').width / 2,
         resizeMode: 'center'
     },
