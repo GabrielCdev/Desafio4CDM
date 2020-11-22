@@ -3,7 +3,7 @@ import { StyleSheet, View, Image, Dimensions } from 'react-native'
 
 import Author from './Author'
 import Comments from './Comments'
-import AddComent from './AddComment'
+import AddComment from './AddComment'
 
 class Post extends Component {
     render() {
@@ -12,7 +12,7 @@ class Post extends Component {
                 <Image source={this.props.image} style={styles.image} />
                 <Author email={this.props.email} nickname={this.props.nickname} />
                 <Comments comments={this.props.comments} />
-                <AddComent />
+                <AddComment postId={this.props.id} />
             </View>
         )
     }
