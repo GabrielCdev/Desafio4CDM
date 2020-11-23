@@ -36,7 +36,7 @@ class AddPhoto extends Component {
             maxWidth: 800
         }, res => {
             if(!res.didCancel) {
-                this.setState({ image: { uri: res.uri, base64: res.data } })
+                this.setState({ image: { uri: res.uri } }) // , base64: res.data
             }
         })
     }
