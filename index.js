@@ -2,7 +2,7 @@ import registerRootComponent from 'expo/build/launch/registerRootComponent'
 import React from 'react'
 import { Provider } from 'react-redux'
 
-import Navigator from './src/Navigator'
+import App from './src/App'
 
 import storeConfig from './src/store/storeConfig'
 
@@ -13,7 +13,7 @@ const store = storeConfig()
 const Redux = () => {
     return(
         <Provider store={store}>
-            <Navigator />
+            <App />
         </Provider>
     )
 }
