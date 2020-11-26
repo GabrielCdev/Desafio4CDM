@@ -1,11 +1,5 @@
 import React, { Component } from 'react'
-import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
-    TextInput
-} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { createUser } from '../store/actions/user'
 
@@ -33,11 +27,12 @@ class Register extends Component {
             <View style={styles.container}>
                 <TextInput placeholder='Nome' style={styles.input} autoFocus={true} value={this.state.name}
                     onChangeText={name => this.setState({ name })} />
-                <TextInput placeholder='Email' style={styles.input} keyboardType='email-address' value={this.state.email}
-                    onChangeText={email => this.setState({ email })} />
-                <TextInput placeholder='Senha' style={styles.input} secureTextEntry={true} value={this.state.password}
-                    onChangeText={password => this.setState({ password })} />
-                <TouchableOpacity onPress={() => { this.props.onCreateUser(this.state) }} 
+                <TextInput placeholder='Email' style={styles.input} keyboardType='email-address'
+                    value={this.state.email} onChangeText={email => this.setState({ email })} />
+                <TextInput placeholder='Senha' style={styles.input} secureTextEntry={true} 
+                    value={this.state.password} onChangeText={password => this.setState({ password })} />
+                <TouchableOpacity onPress={() => { 
+                    this.props.onCreateUser(this.state) }} 
                     style={styles.buttom}>
                     <Text style={styles.buttomText}>Salvar</Text>
                 </TouchableOpacity>

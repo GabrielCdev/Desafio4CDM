@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addComment } from '../store/actions/posts'
-import {
+import { 
     View,
     Text,
     StyleSheet,
     TextInput,
-    TouchableWithoutFeedback as TWF,
-    Alert
+    TouchableWithoutFeedback as TWF 
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
@@ -31,15 +30,14 @@ class AddComment extends Component {
 
     render() {
         let commentArea = null
-        
-        if(this.state.editMode) {
+
+        if (this.state.editMode) {
             commentArea = (
                 <View style={styles.container}>
-                    <TextInput placeholder='Fazer um comentário...'
-                        style={styles.input} autoFocus={true}
-                        value={this.state.comment}
-                        onChangeText={comment => this.setState({ comment })}
+                    <TextInput placeholder='Fazer um comentário...' style={styles.input} autoFocus={true} 
+                        value={this.state.comment} onChangeText={comment => this.setState({ comment })} 
                         onSubmitEditing={this.handleAddComment} />
+                    
                     <TWF onPress={() => this.setState({ editMode: false })}>
                         <Icon name='times' size={15} color='#555' />
                     </TWF>

@@ -29,9 +29,9 @@ class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TextInput placeholder='Email' style={styles.input} autoFocus={true} keyboardType='email-address'
+                <TextInput placeholder='Email' style={styles.input} autoFocus={true} keyboardType='email-address' 
                     value={this.state.email} onChangeText={email => this.setState({ email })} />
-                <TextInput placeholder='Senha' style={styles.input} secureTextEntry={true}
+                <TextInput placeholder='Senha' style={styles.input} secureTextEntry={true} 
                     value={this.state.password} onChangeText={password => this.setState({ password })} />
                 <TouchableOpacity onPress={this.login} style={styles.buttom}>
                     <Text style={styles.buttomText}>Login</Text>

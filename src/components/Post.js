@@ -8,8 +8,7 @@ import AddComment from './AddComment'
 
 class Post extends Component {
     render() {
-        const addComment = this.props.name ?
-            <AddComment postId={this.props.id} /> : null
+        const addComment = this.props.name ? <AddComment postId={this.props.id} /> : null
 
         return (
             <View style={styles.container}>

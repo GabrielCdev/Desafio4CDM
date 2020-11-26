@@ -36,7 +36,7 @@ class AddPhoto extends Component {
 
     pickImage = () => {
         if(!this.props.name) {
-            Alert.alert(noUser)
+            Alert.alert('Falha!', noUser)
 
             return
         }
@@ -47,7 +47,7 @@ class AddPhoto extends Component {
             maxWidth: 800
         }, res => {
             if(!res.didCancel) {
-                this.setState({ image: { uri: res.uri } }) // , base64: res.data
+                this.setState({ image: { uri: res.uri, base64: res.data } })
             }
         })
     }
@@ -84,7 +84,7 @@ class AddPhoto extends Component {
                     </TouchableOpacity>
                     <TextInput placeholder='Comentário para foto...' style={styles.input} value={this.state.comment}
                         editable={this.props.name != null} onChangeText={comment => this.setState({ comment })} />
-                    <TouchableOpacity onPress={this.save} disabled={this.props.loading}
+                    <TouchableOpacity onPress={this.save} disabled={this.props.loading} 
                         style={[styles.buttom, this.props.loading ? styles.buttonDisabled : null]}>
                         <Text style={styles.buttomText}>Salvar</Text>
                     </TouchableOpacity>

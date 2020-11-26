@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Gravatar } from 'react-native-gravatar'
-import {
+import { 
     StyleSheet,
     Text,
     View,
     Platform,
-    Image
+    Image 
 } from 'react-native'
 import icon from '../../assets/imgs/icon.png'
 
@@ -14,9 +14,8 @@ class Header extends Component {
     render() {
         const name = this.props.name || 'Guest'
         const gravatar = this.props.email ?
-            <Gravatar options={{ email: this.props.email, secure: true }} style={styles.avatar} />
-        : null
-
+            <Gravatar options={{ email: this.props.email, secure: true }} style={styles.avatar} /> : null
+            
         return (
             <View style={styles.container}>
                 <View style={styles.rowContainer}>

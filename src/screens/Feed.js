@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { StyleSheet, FlatList, View } from 'react-native'
-
-// Components:
 import Header from '../components/Header'
 import Post from '../components/Post'
-
-// Store:
 import { fetchPosts } from '../store/actions/posts'
 
 class Feed extends Component {
@@ -18,11 +14,10 @@ class Feed extends Component {
         return (
             <View style={styles.container}>
                 <Header />
-                <FlatList
-                    data={this.props.posts}
-                    keyExtractor={item => `${item.id}`}
-                    renderItem={({ item }) => 
-                        <Post key={item.id} {...item} />} />
+                <FlatList 
+                    data={this.props.posts} 
+                    keyExtractor={item => `${item.id}`} 
+                    renderItem={({ item }) => <Post key={item.id} {...item} />} />
             </View>
         )
     }
