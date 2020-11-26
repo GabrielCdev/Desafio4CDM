@@ -8,15 +8,15 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case USER_LOGGED_IN:
             return {
                 ...state,
                 name: action.payload.name,
                 email: action.payload.email,
-                token: action.payload.token
+                token: action.payload.token,
             }
-            
+
         case USER_LOGGED_OUT:
             return {
                 ...initialState
@@ -28,12 +28,11 @@ const reducer = (state = initialState, action) => {
                 isLoading: true
             }
 
-        case USER_LOADED: {
+        case USER_LOADED:
             return {
                 ...state,
                 isLoading: false
             }
-        }
 
         default:
             return state

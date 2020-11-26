@@ -6,14 +6,13 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case SET_MESSAGE:
             return {
                 ...state,
                 title: action.payload.title,
                 text: action.payload.text
             }
-
         default:
             return state
     }

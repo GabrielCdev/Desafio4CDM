@@ -6,13 +6,13 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case SET_POSTS:
             return {
                 ...state,
                 posts: action.payload
             }
-            
+
         case ADD_COMMENT:
             return {
                 ...state,
@@ -29,7 +29,7 @@ const reducer = (state = initialState, action) => {
                     return post
                 })
             }
-        
+
         case CREATING_POST:
             return {
                 ...state,
@@ -41,7 +41,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 isUploading: false
             }
-            
+
         default:
             return state
     }
