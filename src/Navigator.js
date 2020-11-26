@@ -1,12 +1,12 @@
 import React from 'react'
-import { 
+import {
     createBottomTabNavigator,
     createSwitchNavigator,
     createStackNavigator
 } from 'react-navigation'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-// Screens
+
 import Splash from './screens/Splash'
 import Feed from './screens/Feed'
 import AddPhoto from './screens/AddPhoto'
