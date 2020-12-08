@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
     },
     title: {
         color: '#000',
-        fontFamily: 'shelter',
         height: 30,
         fontSize: 28
     },
