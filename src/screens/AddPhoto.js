@@ -24,7 +24,7 @@ class AddPhoto extends Component {
     }
 
     componentDidUpdate = prevProps => {
-        if(prevProps.loading && !this.props.loading) {
+        if (prevProps.loading && !this.props.loading) {
             this.setState({
                 image: null,
                 comment: ''
@@ -35,7 +35,7 @@ class AddPhoto extends Component {
     }
 
     pickImage = async () => {
-        if(!this.props.name) {
+        if (!this.props.name) {
             Alert.alert('Falha!', noUser)
 
             return
@@ -48,13 +48,13 @@ class AddPhoto extends Component {
             quality: 1
         });
 
-        if(!result.cancelled) {
-            this.setState({image: result.uri})
+        if (!result.cancelled) {
+            this.setState({ image: result.uri })
         }
     }
 
     save = async () => {
-        if(!this.props.name) {
+        if (!this.props.name) {
             Alert.alert('Falha!', noUser)
 
             return
