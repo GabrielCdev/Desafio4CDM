@@ -34,22 +34,23 @@ class AddPhoto extends Component {
         }
     }
 
-    pickImage = () => {
+    pickImage = async () => {
         if(!this.props.name) {
             Alert.alert('Falha!', noUser)
 
             return
         }
 
-        ImagePicker.launchImageLibraryAsync({
-            title: 'Escolha a imagem',
-            maxHeight: 600,
-            maxWidth: 800
-        }, res => {
-            if(!res.didCancel) {
-                this.setState({ image: { uri: res.uri, base64: res.data } })
-            }
-        })
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1
+        });
+
+        if(!result.cancelled) {
+            this.setState({image: result.uri})
+        }
     }
 
     save = async () => {
@@ -59,7 +60,7 @@ class AddPhoto extends Component {
             return
         }
 
-        this.props.onAddPost({
+        await this.props.onAddPost({
             id: Math.random(),
             nickname: this.props.name,
             email: this.props.email,
@@ -84,7 +85,7 @@ class AddPhoto extends Component {
                     </TouchableOpacity>
                     <TextInput placeholder='Comentário para foto...' style={styles.input} value={this.state.comment}
                         editable={this.props.name != null} onChangeText={comment => this.setState({ comment })} />
-                    <TouchableOpacity onPress={this.save} disabled={this.props.loading} 
+                    <TouchableOpacity onPress={this.save} disabled={this.props.loading}
                         style={[styles.buttom, this.props.loading ? styles.buttonDisabled : null]}>
                         <Text style={styles.buttomText}>Salvar</Text>
                     </TouchableOpacity>

@@ -11,7 +11,7 @@ export const addPost = post => {
             baseURL: 'https://us-central1-facsgram.cloudfunctions.net',
             method: 'post',
             data: {
-                image: post.image.base64
+                image: post.image
             }
         })
             .catch(err => {
@@ -21,8 +21,6 @@ export const addPost = post => {
                 }))
             })
             .then(resp => {
-                post.image = resp.data.imageUrl
-
                 axios.post(`/posts.json?auth=${getState().user.token}`, { ...post })
                     .catch(err => {
                         dispatch(setMessage({
