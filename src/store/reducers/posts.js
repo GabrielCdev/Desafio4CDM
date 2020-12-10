@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
         case SET_POSTS:
             return {
                 ...state,
-                posts: action.payload
+                posts: [...action.payload]
             }
 
         case ADD_COMMENT:
@@ -18,13 +18,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 posts: state.posts.map(post => {
                     if (post.id === action.payload.postId) {
-                        if(post.comments) {
-                            post.comments = post.comments.concat(
-                                action.payload.comment
-                            )
-                        } else {
-                            post.comments = [action.payload.comment]
-                        }
+                        post.comments = [...post.comments, ...action.payload.comment]
                     }
                     return post
                 })

@@ -81,13 +81,10 @@ export const fetchPosts = () => {
             })
             .then(res => {
                 const rawPosts = res.data
-                const posts = []
+                let posts = []
 
                 for(let key in rawPosts) {
-                    posts.push({
-                        ...rawPosts[key],
-                        id: key
-                    })
+                    posts = [...posts, { ...rawPosts[key], id: key }]
                 }
 
                 dispatch(setPosts(posts.reverse()))
