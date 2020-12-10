@@ -80,14 +80,14 @@ class AddPhoto extends Component {
                     <View style={styles.imageContainer}>
                         <Image source={this.state.image} style={styles.image} />
                     </View>
-                    <TouchableOpacity onPress={this.pickImage} style={styles.buttom}>
-                        <Text style={styles.buttomText}>Escolha a foto</Text>
+                    <TouchableOpacity onPress={this.pickImage} style={styles.button}>
+                        <Text style={styles.buttonText}>Escolha a foto</Text>
                     </TouchableOpacity>
                     <TextInput placeholder='Comentário para foto...' style={styles.input} value={this.state.comment}
                         editable={this.props.name != null} onChangeText={comment => this.setState({ comment })} />
                     <TouchableOpacity onPress={this.save} disabled={this.props.loading}
-                        style={[styles.buttom, this.props.loading ? styles.buttonDisabled : null]}>
-                        <Text style={styles.buttomText}>Salvar</Text>
+                        style={[styles.button, this.props.loading ? styles.buttonDisabled : null]}>
+                        <Text style={styles.buttonText}>Salvar</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
@@ -116,12 +116,12 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').width / 2,
         resizeMode: 'center'
     },
-    buttom: {
+    button: {
         marginTop: 30,
         padding: 10,
         backgroundColor: '#4286f4'
     },
-    buttomText: {
+    buttonText: {
         fontSize: 20,
         color: '#FFF'
     },

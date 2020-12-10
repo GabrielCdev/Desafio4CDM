@@ -17,8 +17,8 @@ class Profile extends Component {
                 <Gravatar options={options} style={styles.avatar} />
                 <Text style={styles.nickname}>{this.props.name}</Text>
                 <Text style={styles.email}>{this.props.email}</Text>
-                <TouchableOpacity onPress={this.logout} style={styles.buttom}>
-                    <Text style={styles.buttomText}>Sair</Text>
+                <TouchableOpacity onPress={this.logout} style={styles.button}>
+                    <Text style={styles.buttonText}>Sair</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
         marginTop: 20,
         fontSize: 25
     },
-    buttom: {
+    button: {
         marginTop: 30,
         padding: 10,
         backgroundColor: '#4286F4'
     },
-    buttomText: {
+    buttonText: {
         fontSize: 20,
         color: '#FFF'
     }

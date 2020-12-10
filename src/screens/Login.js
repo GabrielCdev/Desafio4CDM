@@ -33,13 +33,13 @@ class Login extends Component {
                     value={this.state.email} onChangeText={email => this.setState({ email })} />
                 <TextInput placeholder='Senha' style={styles.input} secureTextEntry={true} 
                     value={this.state.password} onChangeText={password => this.setState({ password })} />
-                <TouchableOpacity onPress={this.login} style={styles.buttom}>
-                    <Text style={styles.buttomText}>Login</Text>
+                <TouchableOpacity onPress={this.login} style={styles.button}>
+                    <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {
                     this.props.navigation.navigate('Register')
-                }} style={styles.buttom}>
-                    <Text style={styles.buttomText}>Criar nova conta...</Text>
+                }} style={styles.button}>
+                    <Text style={styles.buttonText}>Criar nova conta...</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -52,12 +52,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    buttom: {
+    button: {
         marginTop: 30,
         padding: 10,
         backgroundColor: '#4286F4'
     },
-    buttomText: {
+    buttonText: {
         fontSize: 20,
         color: '#FFF'
     },

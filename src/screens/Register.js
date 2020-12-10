@@ -33,8 +33,8 @@ class Register extends Component {
                     value={this.state.password} onChangeText={password => this.setState({ password })} />
                 <TouchableOpacity onPress={() => { 
                     this.props.onCreateUser(this.state) }} 
-                    style={styles.buttom}>
-                    <Text style={styles.buttomText}>Salvar</Text>
+                    style={styles.button}>
+                    <Text style={styles.buttonText}>Salvar</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    buttom: {
+    button: {
         marginTop: 30,
         padding: 10,
         backgroundColor: '#4286F4'
     },
-    buttomText: {
+    buttonText: {
         fontSize: 20,
         color: '#FFF'
     },
