@@ -5,3 +5,6 @@ Se não quiser proceder com a criação de um cadastro:
 
 Login: teste@teste.com
 Senha: teste123
+
+Lembrando que foi usado o GRAVATAR, onde só será possível ver a foto de perfil caso o usuário tenha cadastro no GRAVATAR.
+https://br.gravatar.com/
